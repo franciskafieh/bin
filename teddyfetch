@@ -1,0 +1,28 @@
+#!/usr/bin/env dash
+# assumes shell provides an implementation of cat and printf
+
+username() {
+    printf " %s" "$USER"
+}
+
+mem() {
+    printf " %s" "$(free -hg | awk 'NR==2 { print $3 }')"
+}
+
+cputemp() {
+    temp=$(cat /sys/class/thermal/thermal_zone*/temp)
+    printf " %s°" "$((temp/1000))"
+}
+
+palette() {
+   	for i in 1 2 3 4 5 6; do
+		printf "[9%sm%s" "$i" "⬤ "
+	done
+	printf "%s" "[0m"
+}
+
+printf " o___o    %s
+ (^o^)    %s
+o/( )\o   %s
+O_.^._O   %s
+" "$(username)" "$(mem)" "$(cputemp)" "$(palette)"
