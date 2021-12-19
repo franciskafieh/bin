@@ -5,3 +5,7 @@ All the scripts are written to be interpreted explicitly by `dash`. This is beca
 
 ### teddyfetch
 suuuuuuper small fetch script with a cute ascii art teddy bear
+
+here's a lil preview: 
+
+![teddyfetch preview](teddyfetch.png)
